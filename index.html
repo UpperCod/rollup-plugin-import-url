@@ -1,0 +1,46 @@
+<script>
+const importMaps = {
+    imports : {
+        react : "atomico",
+        atomico: "http://unpkg.com/atomico"
+        "atomico/": "http://unpkg.com/atomico"
+    }
+};
+
+const isUrl = (src) => /^(http(s){0,1}:){0,1}\/\//.test(src);
+
+const isLocal = (src)=>/^(\.){0,1}\//.test(src)
+
+function createResolve({imports}){
+    function index(src){
+            if( imports[src]){
+                const val = value(src);
+                return isLocal(src) ? "" : src;
+            }else{
+                for(prop in imports){
+                    if ( prop.endsWith("/") && src.startsWith(subFolder)) {
+                        return value(prop)+src.replace(subFolder, "/")
+                    }
+                }
+            }
+        }
+    function value(src){
+            if(imports[src]){
+                return isLocal(src) ? "" : imports[src];
+            }else{
+
+            }
+    }
+    return {
+        index,value
+
+    }
+}
+
+const {index,value} = createResolve(importMaps);
+
+console.log(index("react"))
+console.log(index("react/hooks"))
+console.log(index("react/html"))
+
+</script>

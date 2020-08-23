@@ -23,7 +23,12 @@
         "url": "https://github.com/UpperCod/pkg_name/issues"
     },
     "homepage": "https://github.com/UpperCod/pkg_name#readme",
-    "dependencies": {},
+    "dependencies": {
+        "@uppercod/cache": "^1.0.0",
+        "@uppercod/hash": "^1.0.0",
+        "@uppercod/request": "^1.0.1",
+        "es-module-lexer": "^0.3.24"
+    },
     "devDependencies": {
         "@rollup/plugin-node-resolve": "^8.1.0",
         "ava": "^3.10.1",

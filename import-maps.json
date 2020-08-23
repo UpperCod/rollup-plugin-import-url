@@ -1,0 +1,6 @@
+{
+    "imports": {
+        "react": "atomico",
+        "atomico": "https://unpkg.com/atomico"
+    }
+}

@@ -1,4 +1,14 @@
+import path from "path";
+import { rollup } from "rollup";
 import test from "ava";
-import * as pkg from "../esm";
+import importUrl from "../esm";
 
-test("simple replace", async (t) => {});
+test("simple replace", async (t) => {
+    const bundle = await rollup({
+        input: path.join(__dirname, "./script.js"),
+        plugins: [importUrl()],
+    });
+    await bundle.generate({
+        format: "esm",
+    });
+});
