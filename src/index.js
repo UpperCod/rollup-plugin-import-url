@@ -1,6 +1,4 @@
-import path from "path";
 import url from "url";
-import { readFile } from "fs/promises";
 import { init, parse } from "es-module-lexer";
 import hash from "@uppercod/hash";
 import createCache from "@uppercod/cache";
