@@ -1,3 +1,5 @@
-import * as Interal from "./internal";
+import { Plugin } from "rollup";
 
-declare module "pkg_name" {}
+declare module "rollup-plugin-import-url" {
+    export default function importUrl(): Plugin;
+}

@@ -14,7 +14,7 @@ const cwd = process.cwd();
 /**
  * @returns {import("rollup").Plugin}
  */
-export default function importUrl({ importMaps }) {
+export default function importUrl() {
     return {
         name: "plugin-import-url",
         async resolveId(id) {
@@ -32,6 +32,9 @@ export default function importUrl({ importMaps }) {
     };
 }
 
+/**
+ * @param {string} id
+ */
 async function resolve(id) {
     await init;
 

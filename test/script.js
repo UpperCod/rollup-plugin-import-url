@@ -1,1 +1,1 @@
-export { h } from "http://unpkg.com/atomico?module";
+export * from "http://localhost:8080";
