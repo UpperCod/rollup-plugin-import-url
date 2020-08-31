@@ -1,6 +1,6 @@
 {
     "name": "rollup-plugin-import-url",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Import ESM modules from URL for local use and be processed by rollup",
     "main": "cjs.js",
     "module": "esm.js",

@@ -10,7 +10,16 @@ const cache = createCache();
 
 const isUrl = (file) => /^(http(s){0,1}:){0,1}\/\//.test(file);
 
-const cwd = process.cwd();
+const isNpm = (file) => {
+    if (/^\./.test(file) || isUrl(file)) return false;
+    try {
+        require.resolve(file);
+        return true;
+    } catch (e) {
+        return false;
+    }
+};
+
 /**
  * @returns {import("rollup").Plugin}
  */
@@ -55,7 +64,9 @@ async function resolve(id) {
         .map((data) => {
             return {
                 ...data,
-                url: url.resolve(uri, data.str),
+                url: cache(isNpm, data.str)
+                    ? data.str
+                    : url.resolve(uri, data.str),
             };
         })
         .reduce((code, data) => {

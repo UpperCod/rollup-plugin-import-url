@@ -2,6 +2,8 @@
 
 Import ESM modules from URL for local use and be processed by rollup, allowing to apply tree-shaking on non-local resources.
 
+**If the module to be imported has local dependencies, these dependencies will be used**.
+
 ## Example
 
 ```js
